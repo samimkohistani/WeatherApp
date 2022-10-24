@@ -41,10 +41,11 @@ function getData(location) {
 
 
 
-
+            document.querySelector(".searchBox").classList.add("onSearch");
+            document.querySelector(".content").classList.add("onContent");
 
         } else {
-            alert("some error occured")
+            alert("Enter A Valid Location Name")
         }
     }
     xhr.send()
