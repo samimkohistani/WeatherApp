@@ -12,9 +12,9 @@ const weatherImg = document.getElementById("weatherImg");
 
 
 
-function getData() {
-    // let loc 
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=Virginia&appid=2405d338b8f6702827e8a40da43d496c`;
+function getData(location) {
+    let loc = location
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=2405d338b8f6702827e8a40da43d496c`;
     const xhr = new XMLHttpRequest()
     xhr.open("GET", url, true)
     xhr.onload = function () {
@@ -41,10 +41,49 @@ function getData() {
 
 
 
+
+
         } else {
             alert("some error occured")
         }
     }
     xhr.send()
 }
-getData()
+
+function ktc(k) {
+    k = (k - 273.15);
+    return k.toFixed(2);
+}
+
+
+
+const searchBtn = document.querySelector(".searchBox").querySelector("button");
+const searchBox = document.querySelector(".searchBox").querySelector("input");
+
+
+
+searchBox.addEventListener("keypress", (e) => {
+    if (e.which === 13) {
+        let searchVal = searchBox.value;
+        if (searchVal === "") {
+            alert("Enter location name in the search box")
+        } else if (searchVal !== "") {
+            searchVal = searchVal.split("");
+            searchVal[0] = searchVal[0].toUpperCase();
+            searchVal = searchVal.join("");
+            getData(searchVal);
+        }
+    }
+})
+
+searchBtn.addEventListener("click", () => {
+    let searchVal = searchBox.value;
+    if (searchVal === "") {
+        alert("Enter location name in the search box")
+    } else if (searchVal !== "") {
+        searchVal = searchVal.split("");
+        searchVal[0] = searchVal[0].toUpperCase();
+        searchVal = searchVal.join("");
+        getData(searchVal);
+    }
+})
