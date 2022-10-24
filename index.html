@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,67 @@
     <title>My Weather app</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <div class="content">
+
+        <div class="location card">
+            <h1>location</h1>
+            <p id="cityName"></p>
+            <p id="country"></p>
+            <p id="timeZone"></p>
+        </div>
+
+        <div class="coords card">
+            <div class="coord">
+                <h1>Coordinates</h1>
+                <P></P>
+                <P></P>
+            </div>
+        </div>
+
+        <div class="weather card">
+            <h1>Weather</h1>
+            <P id="weatherType"></P>
+            <p id="weatherDesc"></p>
+            <br>
+            <img src="#" alt="not loaded" id="weatherImg">
+        </div>
+
+        <div class="temperature card">
+            <h1>temperature</h1>
+            <div class="temp">
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+
+        <div class="visibility card">
+            <h1>Visibility</h1>
+            <p id="visibility"></p>
+        </div>
+
+        <div class="winds card">
+            <h1>wind</h1>
+            <div class="wind">
+                <p></p>
+                <p></p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
     <script src="./script.js"></script>
-    
+
 </body>
+
 </html>
